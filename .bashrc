@@ -82,24 +82,24 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-	if [[ -f /usr/share/bash-completion/bash_completion ]]; then
-		# shellcheck source=/dev/null
-		. /usr/share/bash-completion/bash_completion
-	elif [[ -f /etc/bash_completion ]]; then
-		# shellcheck source=/dev/null
-		. /etc/bash_completion
-	elif [[ -f /usr/local/etc/bash_completion ]]; then
-		# shellcheck source=/dev/null
-		. /usr/local/etc/bash_completion
-	fi
-fi
-if [[ -d /etc/bash_completion.d/ ]]; then
-	for file in /etc/bash_completion.d/* ; do
-		# shellcheck source=/dev/null
-		source "$file"
-	done
-fi
+# if ! shopt -oq posix; then
+# 	if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+# 		# shellcheck source=/dev/null
+# 		. /usr/share/bash-completion/bash_completion
+# 	elif [[ -f /etc/bash_completion ]]; then
+# 		# shellcheck source=/dev/null
+# 		. /etc/bash_completion
+# 	elif [[ -f /usr/local/etc/bash_completion ]]; then
+# 		# shellcheck source=/dev/null
+# 		. /usr/local/etc/bash_completion
+# 	fi
+# fi
+# if [[ -d /etc/bash_completion.d/ ]]; then
+# 	for file in /etc/bash_completion.d/* ; do
+# 		# shellcheck source=/dev/null
+# 		source "$file"
+# 	done
+# fi
 
 # Start the gpg-agent if not already running
 if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
